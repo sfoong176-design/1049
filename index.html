@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일산 싱크대 하수구 배관 배수구 막힘 뚫는곳 | 24시 긴급출동</title>
+    
+    <style>
+        /* [PC WIDE DESIGN] PC 모니터 화면 최적화 스타일 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* PC용 와이드 메인 컨테이너 (좌우 2분할 구조) */
+        .pc-container {
+            display: flex;
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08);
+            width: 100%;
+            max-width: 1200px;
+            min-height: 750px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* ==================================================
+           [좌측 섹션] 정보 및 스토리텔링 구역 (고정 고정)
+        ================================================== */
+        .left-panel {
+            flex: 1.1;
+            padding: 45px 40px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #ffedd5;
+            color: #ea580c;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            align-self: flex-start;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #0f172a;
+            line-height: 1.35;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* 1000자 상세 설명 본문 */
+        .description-box {
+            background-color: #f8fafc;
+            padding: 24px;
+            border-radius: 16px;
+            text-align: left;
+            border-left: 5px solid #ea580c;
+            overflow-y: auto;
+            max-height: 400px; /* PC 해상도 대응 스크롤 */
+            margin-bottom: 25px;
+        }
+
+        .description-box h3 {
+            font-size: 18px;
+            color: #0f172a;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .description-box p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .description-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: #ea580c;
+            font-weight: 700;
+            background: linear-gradient(to top, #ffedd5 40%, transparent 40%);
+        }
+
+        /* PC 대형 통화 유도 버튼 */
+        .call-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            background-color: #ea580c;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
+            transition: all 0.2s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .call-btn:hover {
+            background-color: #c2410c;
+            box-shadow: 0 10px 30px rgba(234, 88, 12, 0.45);
+        }
+
+        /* ==================================================
+           [우측 섹션] 실제 하수구 작업 현장 사진 갤러리 구역
+        ================================================== */
+        .right-panel {
+            flex: 0.9;
+            padding: 45px 30px;
+            background-color: #f8fafc;
+            overflow-y: auto;
+            max-height: 750px; /* 스크롤바 제공으로 와이드 화면 연동 */
+        }
+
+        .gallery-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #475569;
+            margin-bottom: 15px;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* 개별 이미지 프레임 및 설명 오버레이 */
+        .img-item {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .img-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .img-text-overlay {
+            width: 100%;
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 14px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .img-text-overlay span {
+            color: #fbbf24;
+        }
+
+        /* 버튼 바운스 애니메이션 */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        /* PC 스크롤바 디자인 커스텀 (깔끔함 유지) */
+        .description-box::-webkit-scrollbar, .right-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+        .description-box::-webkit-scrollbar-thumb, .right-panel::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PC 버전 2분할 통합 프레임 크기 -->
+    <div class="pc-container">
+        
+        <!-- 좌측: 타깃 광고 문구 및 기사 본문 영역 -->
+        <div class="left-panel">
+            <div>
+                <span class="badge">고양시 일산 전지역 즉시출동</span>
+                <h1>일산 하수구 배관 배수구 막힘 뚫는곳</h1>
+                <p class="tagline">막힘 진단부터 고압세척까지 완벽하게 소통합니다</p>
+                
+                <div class="description-box">
+                    <h3>일산 배관 소통 및 배수구 정밀 케어</h3>
+                    <p><span class="highlight">일산동구 및 일산서구 전역에서 발생하는 하수도, 배관, 배수구 막힘 문제</span>를 속 시원하고 정확하게 해결해 드리는 배관 매니지먼트 서비스입니다. 주거 밀집 지역과 대형 상권이 공존하는 일산 지역의 특성상 빌라, 아파트 단지, 대형 요식업 상가 등 건물의 구조와 배관 형태에 따라 막힘의 원인이 매우 다양합니다. 특히 가정집 주방 싱크대나 음식점 주방 하부 배관은 일상에서 유입되는 미세한 이물질과 기름 성분이 만나 배관 내벽에서 단단한 <span class="highlight">기름 슬러지(유지방 덩어리)</span>로 변하여 경화됩니다. 이는 일반 관통 장비로 구멍만 뚫어서는 얼마 못 가 다시 막히는 고질적인 역류 오류의 원인이 됩니다.</p>
+                    
+                    <p>저희는 배관 구조를 파괴하지 않고 내부 문제를 근본적으로 뿌리 뽑는 첨단 정밀 시공을 고집합니다. 현장 방문 시 가장 먼저 투입되는 장비는 초고화질 <span class="highlight">배관 내시경 카메라</span>입니다. 물이 고여 답답하게 막힌 어두운 지하 관로 속이나 꺾이는 굴곡진 구간까지 내시경을 밀어 넣어, 막힘이 시작된 정확한 좌표와 배관 내부의 손상 상태, 막힘을 유발하는 원인 물질을 과학적으로 분석합니다. 이 진단 단계를 거쳐야만 과잉 진단과 엉뚱한 시공을 막고, 가장 안전하고 직관적인 맞춤형 해결 방안을 수립할 수 있습니다.</p>
+                    
+                    <p>원인이 규명되면 물리적 파쇄 및 척출에 들어갑니다. 최신 스케일링 장비인 플랙스 샤프트를 사용하여 배관 내벽에 흡착된 슬러지를 완전히 부수어 내거나, 공용 횡주관 및 외부 집수정 막힘에는 엄청난 분사압으로 배관 속을 말끔히 청소하는 <span class="highlight">초고압 세척 공법</span>을 적용합니다. 고압 세척은 물을 강력하게 쏘아 배관 내부의 모든 고형물을 밀어내므로 새로 배관을 매설한 것과 다름없는 통수 효율을 자랑합니다. 변기 막힘, 욕실 바닥 배수구 역류, 세면대 물 고임 현상 역시 흡입력이 탁월한 대형 석션기와 관통 장비로 깔끔하게 클리닝합니다.</p>
+                    
+                    <p>모든 작업 완료 후에는 내시경 카메라를 다시 투입하여 시원하게 뚫린 배관 내부를 고객님께 <span class="highlight">모니터로 직접 확인</span>시켜 드리므로 더욱 안심하고 신뢰하실 수 있습니다. 사전에 명확하게 안내해 드린 투명한 정찰제 비용만을 청구하며 불필요한 과잉 시공은 일절 배제합니다. 배수구에서 물이 내려가지 않거나 불쾌한 악취 및 역류 현상으로 스트레스를 받고 계신다면, 일산 전 지역 언제든 신속하게 달려가 완벽한 소통을 선사하겠습니다.</p>
+                </div>
+            </div>
+            
+            <!-- 하단 고정 바로통화 버튼 -->
+            <a href="tel:010-5506-0040" class="call-btn">📞 010-5506-0040 전화하기</a>
+        </div>
+        
+        <!-- 우측: 마우스 스크롤로 시원하게 내려보는 사진 갤러리 영역 -->
+        <div class="right-panel">
+            <p class="gallery-title">📸 실제 일산 현장 작업 데이터</p>
+            <div class="image-gallery">
+                <div class="img-item">
+                    <img src="photo1.jpg" alt="일산 하수구 작업 현장 1">
+                    <div class="img-text-overlay">🎯 긴급출동 문의: <span>010-5506-0040</span></div>
+                </div>
+
+                <div class="img-item">
+                    <img src="photo2.jpg" alt="일산 하수구 작업 현장 2">
+                    <div class="img-text-overlay">🎯 배관내시경 검사: <span>010-5506-0040</span></div>
+                </div>
+
+                <div class="img-item">
+                    <img src="photo3.jpg" alt="일산 하수구 작업 현장 3">
+                    <div class="img-text-overlay">🎯 싱크대 역류 해결: <span>010-5506-0040</span></div>
+                </div>
+
+                <div class="img-item">
+                    <img src="photo4.jpg" alt="일산 하수구 작업 현장 4">
+                    <div class="img-text-overlay">🎯 초고압 배관 세척: <span>010-5506-0040</span></div>
+                </div>
+
+                <div class="img-item">
+                    <img src="photo5.jpg" alt="일산 하수구 작업 현장 5">
+                    <div class="img-text-overlay">🎯 24시 연중무휴 케어: <span>010-5506-0040</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
